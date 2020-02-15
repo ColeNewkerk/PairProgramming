@@ -8,10 +8,10 @@ public class Word {
     public Word(String word){
         this.word = word;
         letterToValue = new HashMap<String,Integer>();
-        populate(letterToValue);
+        populate();
     }
 
-    public void populate(Map<String, Integer> map){
+    public void populate(){
         letterToValue.put("A",1);
         letterToValue.put("B",3);
         letterToValue.put("C",3);
@@ -46,15 +46,12 @@ public class Word {
 
     public int calculateTotal(){
         int sum = 0;
-
         word.toUpperCase();
 
         for (int i = 0; i<word.length();i++){
             String letter = word.substring(i,i+1);
-
             if (letterToValue.containsKey(letter)) {
-                int letterValue = letterToValue.get(letter);
-                sum = letterValue + sum;
+                sum += letterToValue.get(letter);
             }
         }
         return sum;
