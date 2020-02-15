@@ -1,16 +1,16 @@
-import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class WordTest extends GroovyTestCase {
+class WordTest{
     @Test
-    void testNormalWord(){
+    void testNormalWord() {
         Word word = new Word("School");
-        assertEquals(11,word.calculateTotal());
+        assertEquals(11, word.calculateTotal());
     }
     @Test
     void testExtremelyLongWord() {
         Word word = new Word("Impedimenta");
         assertEquals(18,word.calculateTotal());
-
     }
     @Test
     void testVeryShortWord(){
