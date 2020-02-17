@@ -6,7 +6,7 @@ public class Word {
     String word;
 
     public Word(String word){
-        this.word = word;
+        this.word = word.toUpperCase();
         letterToValue = new HashMap<String,Integer>();
         populate();
     }
@@ -46,7 +46,6 @@ public class Word {
 
     public int calculateTotal(){
         int sum = 0;
-        word.toUpperCase();
 
         for (int i = 0; i<word.length();i++){
             String letter = word.substring(i,i+1);
